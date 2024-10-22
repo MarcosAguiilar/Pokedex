@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pokedex</title>
+</head>
+<body>
+<h1>Pokédex</h1>
+<form action="/search" method="get">
+    <input type="text" name="name" placeholder="Buscar Pokémon">
+    <button type="submit">Buscar</button>
+</form>
+<ul>
+    <li th:each="pokemon : ${pokemonList}">
+        <a th:href="@{/pokemon/{id}(id=${pokemon.id})}" th:text="${pokemon.name}">Nombre</a>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalles de Pokémon</title>
+</head>
+<body>
+<h1 th:text="${pokemon.name}">Nombre del Pokémon</h1>
+<p>Tipos: <span th:each="type : ${pokemon.type}" th:text="${type}"></span></p>
+<p>Habilidades: <span th:each="ability : ${pokemon.abilities}" th:text="${ability}"></span></p>
+<p>HP: <span th:text="${pokemon.baseStats.hp}"></span></p>
+<p>Ataque: <span th:text="${pokemon.baseStats.attack}"></span></p>
+
+</body>
+</html>
